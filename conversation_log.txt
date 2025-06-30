@@ -1,0 +1,41 @@
+Conversation Log - RAG Project using LangGraph
+Date: June 30, 2025
+
+User: Hi, I need your Help to create RAG project using LangGraph framework. Before We go I need to store our conversation in txt file and I need the blueprint of our project.
+Assistant: Sure, I can help you with that. Let's start by outlining the blueprint of your RAG project using the LangGraph framework. Could you please provide me with more details about the project requirements and objectives?
+Assistant: I've created a basic project structure for our RAG system using LangGraph. Here's what each component does:
+
+1. `requirements.txt`: Contains all necessary dependencies
+2. `utils/agent.py`: Contains the agent implementation using LangGraph
+3. `utils/vector_store.py`: Handles document storage and retrieval using ChromaDB
+4. `main.py`: The main entry point that ties everything together
+5. `.env`: Configuration file for environment variables
+
+The project structure is:
+```
+rag_project/
+├── data/               # For storing vector database and documents
+├── utils/
+│   ├── agent.py       # Agent implementation
+│   └── vector_store.py # Vector store operations
+├── main.py            # Main application entry point
+├── requirements.txt   # Project dependencies
+└── .env              # Environment variables
+```
+
+To get started, you'll need to:
+
+1. Set up a Python virtual environment
+2. Install the requirements
+3. Add your OpenAI API key to the `.env` file
+4. Add your documents to the `data` directory
+
+Would you like me to help you with any of these steps? Also, do you have any specific type of documents or use case in mind for the RAG system?
+
+User: I upload the external pdf for RAG project. This pdf content the Stock market performance of 2024. Now your task is to create the chat bot and answer the question of user if they asked out of your content you just said that I don't have information for this and give them options like ask about stock market 2024 and give them answer from RAG model.
+Assistant: The PDF file is detected. I updated the project to:
+1. Extract text from the uploaded PDF using PyPDF2.
+2. Load the extracted text into the vector store for retrieval.
+3. Update the chatbot logic to answer only from the PDF content. If a user asks something outside the PDF, the bot will respond: "I don't have information for this. You can ask about stock market performance in 2024."
+
+You can now run the chatbot from `main.py`. The bot will only answer questions based on the PDF content and provide a fallback message for out-of-scope queries.
